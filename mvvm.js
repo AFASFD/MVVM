@@ -15,7 +15,6 @@ class MVVM {
 //给每个属性都生成一个发布者实例
 function observe(data) {
     if (!data || !(data instanceof Object)) {
-        console.log(1)
         return
     }
     for (let key in data) {
@@ -133,7 +132,6 @@ class Compile {
     //处理模板指令
     compileNode(node) {
         let attrs = [...node.attributes]
-        console.log(attrs)
         attrs.forEach(attr => {
             if (this.isDirective(attr.name)) {
                 let key = attr.value
